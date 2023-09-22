@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import Navbar from './components/Navbar';
+import Navbar from './components/NavBar';
+import ItemListContainer from './components/ItemListCointainer';
 
 
 
@@ -9,6 +10,7 @@ import Navbar from './components/Navbar';
 function App() {
   return (
     <><Navbar></Navbar>
+    <ItemListContainer></ItemListContainer>
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
