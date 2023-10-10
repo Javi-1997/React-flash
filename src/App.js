@@ -1,11 +1,12 @@
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import React from 'react';
+
 import Navbar from './components/NavBar';
 import ItemListContainer from './components/ItemListCointainer';
 import { CartContext } from './context/cartcontext';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import ReactDOM from "react-dom/client";
+
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
           <Route path="*" elemento={< />} />
         </Route>
       </Routes>
-    </BrowserRouter></>
+    
     <><Navbar></Navbar>
     <ItemListContainer></ItemListContainer>
     <div className="App">
@@ -37,6 +38,7 @@ function App() {
           Learn React
         </a>
       </header>
+      </BrowserRouter></>
     </div></>
     
   );
