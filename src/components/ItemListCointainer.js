@@ -3,9 +3,11 @@ import React from 'react';
 
 const ItemListContainer = () => {
 
-    const pedirProductos = () =>{
+    let productos =[];
+
+  const pedirProductos = () =>{
         return new Promise((resolve, reject))
-           resolve()
+           resolve(data)
     }
   return (
     <div>

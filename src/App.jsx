@@ -8,25 +8,25 @@ import { CartContext } from './context/cartcontext';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 
-function App() {
+export default function App() {
   return (
-     <><BrowserRouter>
+      <div className="App"> 
+      <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Inicio />} />
+        <Route path="/" element={<ItemListContainer />}/>
+          <Route path= "e" element={<Inicio />} />
           <Route path="blogs" element={<Blogs />} />
           <Route path="contacto" element={<Contacto />} />
-          <Route path="*" elemento={< />} />
-        </Route>
       </Routes>
-    
-    <><Navbar></Navbar>
-    <ItemListContainer></ItemListContainer>
-    <div className="App">
+     
+      <Navbar></Navbar>
+      <ItemListContainer></ItemListContainer>
+      
       <CartContext.Provider value={1}></CartContext.Provider>
+      
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1>
+        <h1>|
           Tienda Flash a
         </h1>
         <a
@@ -38,10 +38,8 @@ function App() {
           Learn React
         </a>
       </header>
-      </BrowserRouter></>
-    </div></>
+      </BrowserRouter>
+      </div>
     
   );
-}
-
-export default App;
+  }
