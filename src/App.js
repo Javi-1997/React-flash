@@ -26,7 +26,7 @@ function App() {
         <Route path="contacto" element={<Contacto />} />
       </Routes>
     </BrowserRouter>
-    document.getElementById("root")
+    
     {}
     <ItemListContainer />
   </div>
