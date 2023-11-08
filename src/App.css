@@ -2,6 +2,7 @@ src/
   components/
     CartWidget.js
     NavBar.js
+    Inicio.js
 
 .App {
   text-align: center;
@@ -44,4 +45,10 @@ src/
 
 .navbar{
   background-color: #61dafb;
+}
+.h1{color: aliceblue;}
+.inicio{
+  
+  background-color: chartreuse;
+  height: 100vh;
 }

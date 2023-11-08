@@ -1,6 +1,6 @@
-
-
 import React, { useState, useEffect } from 'react';
+import jsonData from './data/productos.json';
+import Wrapper from './Wrapper';
 
 const ItemListContainer = () => {
   const [productos, setProductos] = useState([]);
@@ -8,17 +8,10 @@ const ItemListContainer = () => {
 
   const pedirProductos = () => {
     return new Promise((resolve, reject) => {
-      fetch('your-api-endpoint')
-        .then(response => {
-          if (response.ok) {
-            resolve(response.json());
-          } else {
-            reject('Failed to fetch data');
-          }
-        })
-        .catch(error => {
-          reject(error);
-        });
+      //  delay
+      setTimeout(() => {
+        resolve(jsonData);
+      }, 1000);
     });
   };
 
@@ -30,6 +23,7 @@ const ItemListContainer = () => {
       })
       .catch(error => {
         console.error(error);
+        setProductos([]);
         setLoading(false);
       });
   }, []);
@@ -37,14 +31,16 @@ const ItemListContainer = () => {
   return (
     <div>
       {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <ul>
-          {productos.map(product => (
-            <li key={product.id}>{product.name}</li>
+        <p>Cargando...</p>
+      ) : ( 
+        <Wrapper>
+        <div className="products-container">
+          {productos && productos.map(producto => (
+            <producto key={producto.id} {...producto} />
           ))}
-        </ul>
-      )}
+        </div>
+      </Wrapper>
+      )} 
     </div>
   );
 };

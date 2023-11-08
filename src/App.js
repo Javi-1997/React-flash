@@ -21,7 +21,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<ItemListContainer />} />
-        <Route path="item" element={<Inicio />} />
+        <Route path="/Inicio" element={<Inicio />} />
         <Route path="blogs" element={<Blogs />} />
         <Route path="contacto" element={<Contacto />} />
       </Routes>
