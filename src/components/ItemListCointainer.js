@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import jsonData from './data/productos.json';
+import data from './data/productos.json';
 import Wrapper from './Wrapper';
+
+
 
 const ItemListContainer = () => {
   const [productos, setProductos] = useState([]);
@@ -8,28 +10,19 @@ const ItemListContainer = () => {
 
   const pedirProductos = () => {
     return new Promise((resolve, reject) => {
-      //  delay
-      setTimeout(() => {
-        resolve(jsonData);
-      }, 1000);
+      
+        resolve(data);
     });
   };
-
-  useEffect(() => {
-    pedirProductos()
-      .then(data => {
-        setProductos(data);
-        setLoading(false);
+  
+   pedirProductos()
+      .then((res)=>{
+          setProductos = res;
       })
-      .catch(error => {
-        console.error(error);
-        setProductos([]);
-        setLoading(false);
-      });
-  }, []);
-
-  return (
-    <div>
+  
+    return(
+      <div>
+        {productos[0].name}
       {loading ? (
         <p>Cargando...</p>
       ) : ( 
@@ -43,6 +36,22 @@ const ItemListContainer = () => {
       )} 
     </div>
   );
+     
+  useEffect(() => {
+    ItemListContainer()
+      .then(data => {
+        setProductos(data);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error(error);
+        setProductos([]);
+        setLoading(false);
+      });
+  }, []);
+
+  
+    
 };
 
 export default ItemListContainer;
