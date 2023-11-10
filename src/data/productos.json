@@ -4,7 +4,7 @@
       "name": "Computadora",
       "description": "Description of Product 1",
       "price": 19.99,
-      "imagen":"https://s3-sa-east-1.amazonaws.com/saasargentina/0BFg9GHfjVPAeHPwzISn/imagen"
+      "imagen":"./imagen react.png"
     },
     {
       "id": 2,
