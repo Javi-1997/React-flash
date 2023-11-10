@@ -25,13 +25,14 @@ const ItemListContainer = () => {
       <div>
            { 
               productos.length> 0 && 
-              productos.map((productos)=>{
+              productos.map((productos) =>{
                   return(
                       <div className='card'>
-                       <img scr={productos.imagen} alt={productos.name}/>
+                         <img src={productos.imagen} alt={productos.name}/>
                          <h2>{productos.name}</h2>
                           <p>{productos.description}</p>
                           <p>${productos.price}</p>
+                          
                       </div>
                   )
         })
@@ -46,3 +47,4 @@ const ItemListContainer = () => {
 };
 
 export default ItemListContainer;
+
