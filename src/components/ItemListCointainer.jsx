@@ -23,13 +23,24 @@ const ItemListContainer = () => {
   
     return(
       <div>
-        {productos.length> 0 && productos[0].name}
-      
-    </div>
-  );
-     
+           { 
+              productos.length> 0 && 
+              productos.map((productos)=>{
+                  return(
+                      <div className='card'>
+                       <img scr={productos.imagen} alt={productos.name}/>
+                         <h2>{productos.name}</h2>
+                          <p>{productos.description}</p>
+                          <p>${productos.price}</p>
+                      </div>
+                  )
+        })
+      }
+       </div>
     
     
+    
+    );
   
     
 };

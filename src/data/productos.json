@@ -1,13 +1,14 @@
 [ 
-    {
+    { 
       "id": 1,
-      "name": "product",
+      "name": "Computadora",
       "description": "Description of Product 1",
-      "price": 19.99
+      "price": 19.99,
+      "imagen":"https://s3-sa-east-1.amazonaws.com/saasargentina/0BFg9GHfjVPAeHPwzISn/imagen"
     },
     {
       "id": 2,
-      "name": "Product 2",
+      "name": "Pendribe",
       "description": "Description of Product 2",
       "price": 29.99
     },

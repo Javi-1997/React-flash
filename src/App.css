@@ -52,3 +52,17 @@ src/
   background-color: chartreuse;
   height: 100vh;
 }
+
+.card {
+  
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.imagen{
+  size-adjust: auto;
+}
