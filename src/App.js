@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 
 import Navbar from './components/NavBar';
@@ -7,7 +7,7 @@ import ItemListContainer from './components/ItemListCointainer';
 import Inicio from './components/Inicio';
 import Blogs from './components/Blogs';
 import Contacto from './components/Contacto';
-import { CartContext } from './context/cartcontext';
+
 import { BrowserRouter as Router,Routes, Route, BrowserRouter } from 'react-router-dom';
 
 

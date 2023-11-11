@@ -22,7 +22,7 @@ const ItemListContainer = () => {
     }, [])
   
     return(
-      <div>
+      <div className='tarjeta'>
            { 
               productos.length> 0 && 
               productos.map((productos) =>{
@@ -32,7 +32,7 @@ const ItemListContainer = () => {
                          <h2>{productos.name}</h2>
                           <p>{productos.description}</p>
                           <p>${productos.price}</p>
-                          
+                          <button>Agregar al carrito</button>
                       </div>
                   )
         })

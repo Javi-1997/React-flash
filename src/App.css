@@ -44,7 +44,7 @@ src/
 }
 
 .navbar{
-  background-color: #61dafb;
+  background-color: #0c1619;
 }
 .h1{color: aliceblue;}
 .inicio{
@@ -54,9 +54,9 @@ src/
 }
 
 .card {
-  
+  background-color: beige;
   width: 300px;
-  border: 1px solid #ccc;
+  border: 2px solid #0b0707;
   border-radius: 8px;
   
   margin: 20px;
@@ -64,3 +64,21 @@ src/
   
 }
 
+
+.card button{
+  
+  background-color: rgb(184, 144, 41);
+  border: #282c34;
+}
+
+.navbar{
+  
+    display: grid;
+    grid-template-columns: 10rem 10rem 10rem;
+    grid-gap: 1rem;
+  }
+  .tarjeta{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns with equal width */
+   gap: 20px;
+  }
