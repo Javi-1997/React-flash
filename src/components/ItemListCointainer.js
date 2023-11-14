@@ -1,39 +1,40 @@
-import React from 'react';
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../FireBase/config";
 
-
 const ItemListContainer = () => {
-  const [productos, setProductos] = useState([]);
-  const categoria = useParams().categoria;
 
-  useEffect(() => {
-      const productosflashRef = collection(db, "productosflash");
-      const q = categoria ? query(productosflashRef, where("categoria", "==", categoria)) : productosflashRef;
+    const [productos, setProductos] = useState([]);
+
+    const [titulo, setTitulo] = useState("Productos");
+
+    const categoria = useParams().categoria;
+
+    useEffect(() => {
+
+      const productosRef = collection(db, "productos");
+      const q = categoria ? query(productosRef, where("categoria", "==", categoria)) : productosRef;
 
       getDocs(q)
-          .then((resp) => {
-              setProductos(
-                  resp.docs.map((doc) => {
-                      return { ...doc.data(), id: doc.id };
-                  })
-              );
-          });
-  }, [categoria])
-  .catch((error) => {
-    console.error('Error fetching data from Firestore:', error);
-  });
-  
+        .then((resp) => {
+
+          setProductos(
+            resp.docs.map((doc) => {
+              return { ...doc.data(), id: doc.id }
+            })
+          )
+        })
+        
+    }, [categoria])
+    
+    
   return (
-      <div>
-          <ItemList productosflash={productos} />
-      </div>
-  );
-};
+    <div>
+        <ItemList productos={productos} titulo={titulo} />
+    </div>
+  )
+}
 
-export default ItemListContainer;
-
-
+export default ItemListContainer
