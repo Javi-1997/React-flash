@@ -1,7 +1,7 @@
 import React from "react";
 import Contacto from "./components/Contacto";
 import ItemDetailContainer from "./components/ItemDetailContainer";
-import ItemListContainer from "./components/ItemListContainer";
+import ItemListContainer from "./components/ItemListCointainer";
 import Navbar from "./components/Navbar";
 import Nosotros from "./components/Nosotros";
 import "./App.css";

@@ -3,40 +3,37 @@ import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import { collection, getDocs, query, where } from "firebase/firestore";
-import { db } from "../Firebase/config";
+import { db } from "../FireBase/config";
 
 
 const ItemListContainer = () => {
+  const [productos, setProductos] = useState([]);
+  const categoria = useParams().categoria;
 
-    const [productos, setProductos] = useState([]);
-
-    const [titulo, setTitulo] = useState("Productos");
-
-    const categoria = useParams().categoria;
-
-    useEffect(() => {
-
+  useEffect(() => {
       const productosflashRef = collection(db, "productosflash");
       const q = categoria ? query(productosflashRef, where("categoria", "==", categoria)) : productosflashRef;
 
       getDocs(q)
-        .then((resp) => {
-
-          setProductos(
-            resp.docs.map((doc) => {
-              return { ...doc.data(), id: doc.id }
-            })
-          )
-        })
-        
-    }, [categoria])
-    
-    
+          .then((resp) => {
+              setProductos(
+                  resp.docs.map((doc) => {
+                      return { ...doc.data(), id: doc.id };
+                  })
+              );
+          });
+  }, [categoria])
+  .catch((error) => {
+    console.error('Error fetching data from Firestore:', error);
+  });
+  
   return (
-    <div>
-        <ItemList productosflash={productos} nombre={titulo} />
-    </div>
-  )
-}
+      <div>
+          <ItemList productosflash={productos} />
+      </div>
+  );
+};
 
-export default ItemListContainer
+export default ItemListContainer;
+
+
