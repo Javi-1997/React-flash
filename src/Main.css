@@ -6,7 +6,7 @@
 }
 
 :root {
-  --clr-main: #c56cee;
+  --clr-main: #eeab6c;
   --clr-main-light: #efdaf9;
 }
 
@@ -75,8 +75,8 @@
 
 .producto > img {
   width: 100%;
-  aspect-ratio: 2/1;
-  object-fit: cover;
+  aspect-ratio: 3/2;
+  object-fit: fill;
 }
 
 .producto .ver-mas {
